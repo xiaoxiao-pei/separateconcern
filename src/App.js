@@ -30,14 +30,18 @@ function App() {
     <DisplayMessage color={color} />
     <Clock />
     <p>{count}</p>
-    <button onClick={() => {
-      setColor(toggle(color));
-      setCount(count + 1);
+    <UserActions count={count} color={color} />
+  </div>
+  );
+
+  function UserActions(props) {
+    return <button onClick={() => {
+      setColor(toggle(props.color));
+      setCount(props.count + 1)
     }}>
       Click me React
     </button>
-  </div>
-  );
+  }
 
   function Clock() {
     const [time, setTime] = React.useState(new Date().toLocaleTimeString());
