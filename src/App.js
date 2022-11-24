@@ -25,6 +25,7 @@ function toggle(color) {
 function App() {
   const [color, setColor] = React.useState(JSON.parse(sessionStorage.getItem("color")) || "blue");
   const [count, setCount] = React.useState(JSON.parse(localStorage.getItem("count")) || 0);
+  const [time, setTime] = React.useState(new Date().toLocaleTimeString());
 
   console.log(color);
   console.log(count);
@@ -32,12 +33,15 @@ function App() {
   React.useEffect(() => {
     sessionStorage.setItem('color', JSON.stringify(color));
     localStorage.setItem('count', JSON.stringify(count));
+    const interval = setInterval(() => setTime(new Date().toLocaleTimeString()), 3000);
+    return () => { clearInterval(interval); }
+
   }, [color, count]);
 
 
   return (<div>
     <DisplayMessage color={color} />
-    <Clock time={new Date().toLocaleTimeString()} />
+    <Clock time={time} />
     <p>{count}</p>
     <button onClick={() => {
       setColor(toggle(color));
