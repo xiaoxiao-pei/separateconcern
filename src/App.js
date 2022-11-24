@@ -1,20 +1,6 @@
 
 import './App.css';
 import React from 'react';
-//import ReactDOM from 'react-dom';
-
-
-function DisplayMessage(props) {
-  return <h1 style={{ color: props.color }}>Hello React World</h1>;
-}
-
-function toggle(color) {
-  if (color === "blue") {
-    return "red";
-  } else {
-    return "blue";
-  }
-}
 
 function App() {
   const [color, setColor] = React.useState(JSON.parse(sessionStorage.getItem("color")) || "blue");
@@ -29,18 +15,34 @@ function App() {
   return (<div>
     <DisplayMessage color={color} />
     <Clock />
-    <p>{count}</p>
-    <UserActions count={count} color={color} />
+    <CountDisplay count={count} />
+    <UserActions setColor={setColor} setCount={setCount} count={count} color={color} />
   </div>
   );
 
+  function DisplayMessage(props) {
+    return <h1 style={{ color: props.color }}>Hello React World</h1>;
+  }
+
+  function CountDisplay(props){
+    return <p>{props.count}</p>
+  }
+
   function UserActions(props) {
     return <button onClick={() => {
-      setColor(toggle(props.color));
-      setCount(props.count + 1)
+      props.setColor(toggle(props.color));
+      props.setCount(props.count + 1)
     }}>
       Click me React
     </button>
+  }
+
+  function toggle(color) {
+    if (color === "blue") {
+      return "red";
+    } else {
+      return "blue";
+    }
   }
 
   function Clock() {
@@ -48,7 +50,7 @@ function App() {
     //setInterval(() => setTime(new Date().toLocaleTimeString()), 3000);
     React.useEffect(() => {
       const interval = setInterval(() =>
-        setTime(new Date().toLocaleTimeString()), 3000);
+        setTime(new Date().toLocaleTimeString()), 1000);
       return () => { clearInterval(interval); }
     }, [time]);
     return <p>React Clock: {time} </p>
