@@ -8,10 +8,10 @@ function Header() {
             <div>
                 <HomeButton />
             </div>
-            <div class= "App-link">
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/contact">Contact</Link>
+            <div >
+                <Link to="/" class= "App-link">Home</Link>
+                <Link to="/about" class="App-link" >About</Link>
+                <Link to="/contact" class="App-link">Contact</Link>
             </div>
         </div>
     );

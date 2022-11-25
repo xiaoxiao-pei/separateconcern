@@ -21,18 +21,29 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #22A39F;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #22A39F;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #282c34;
+  text-align: center;
+  color:#22A39F;
 }

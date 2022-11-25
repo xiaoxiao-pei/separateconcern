@@ -14,7 +14,7 @@ function Main() {
     }, [color, count]);
 
 
-    return (<div>
+    return (<div class = "main">
         <DisplayMessage color={color} />
         <Clock />
         <CountDisplay count={count} />
