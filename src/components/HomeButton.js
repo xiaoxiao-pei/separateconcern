@@ -9,12 +9,10 @@ function HomeButton() {
             console.log(error);
         }
     };
+    
     return (
-        <div style={{
-            flexDirection: "row", direction:
-                "rtl"
-        }}>
-            <button onClick={handleSubmit}>Home</button>
+        <div style = {{ flexDirection: "row", direction:  "rtl"    }} >
+            <button onClick={handleSubmit} >Home</button>
         </div>
     );
 }
