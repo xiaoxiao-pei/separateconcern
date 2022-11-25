@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+//import Button from 'react-bootstrap/Button';
+import Button from "@mui/material/Button";
 
 function HomeButton() {
     const navigate = useNavigate();
@@ -12,7 +14,11 @@ function HomeButton() {
     
     return (
         <div style = {{ flexDirection: "row", direction:  "rtl"    }} >
-            <button onClick={handleSubmit} >Home</button>
+            {/* <Button variant="primary" onClick={handleSubmit} >Home</Button>
+            <Button variant="secondary" onClick={handleSubmit} >About</Button>
+            <Button variant="danger" onClick={handleSubmit} >Contact</Button> */}
+            <Button variant="contained" onClick={handleSubmit}>Home</Button>
+
         </div>
     );
 }

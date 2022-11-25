@@ -16,7 +16,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 20vh;
+  min-height: 15vh;
   font-size: calc(10px + 2vmin);
   color: #22A39F;
 }
@@ -43,4 +43,5 @@ footer {
   background-color: #282c34;
   text-align: center;
   color:#22A39F;
+  padding: 10px 0 10px 0;
 }

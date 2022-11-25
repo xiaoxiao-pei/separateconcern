@@ -1,56 +1,20 @@
 import '../css/header.css'
 import React from "react";
-import { NavLink } from "react-router-dom";
-import HomeButton from "./HomeButton";
+//import { NavLink } from "react-router-dom";
+//import HomeButton from "./HomeButton";
+import NavButton from './NavButton';
 
 
 function Header() {
-    const buttonStyle = {
-        backgroundColor: "green",
-        border: "none",
-        color: "white",
-        padding: "15px 32px",
-        textAlign: "center",
-        textDecoration: "none",
-        display: "inline-block",
-        fontSize: "16px",
-    };
-
-
     return (
         <div class= "App-header">
-            <div>
+            {/* <div>
                 <HomeButton />
-            </div>
+            </div> */}
             <div >
-                {/* <NavLink
-                    style={({ isActive }) =>
-                        isActive ? { color: "orange" } : { color: "blue" }}
-                    to="/" >  Home
-                </NavLink> */}
-                <NavLink
-                    className={({ isActive }) =>
-                        isActive ? "link-active" : "link-inactive"}
-                    to="/" > Home
-                </NavLink>
-                <NavLink
-                    className={({ isActive }) =>
-                        isActive ? "link-active" : "link-inactive"}
-                    to="/about" > About
-                </NavLink>
-
-                <NavLink
-                    className={({ isActive }) =>
-                        isActive ? "link-active" : "link-inactive"}
-                    to="/contact" > Contact
-                </NavLink>
-
-                <NavLink to= "/">
-                    <button style={buttonStyle}>
-                        <p>Home</p>
-                    </button>
-                </NavLink>
- 
+                <NavButton to="/" label="Home" />
+                <NavButton to="/about" label="About" />
+                <NavButton to="/contact" label="Contact" />
             </div>
         </div>
     );
