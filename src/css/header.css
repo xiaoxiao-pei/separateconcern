@@ -1,14 +1,18 @@
-/* Specific styles for non-active links */
-.link-inactive {
-    color: #22A39F;
+.my-navbar:visited {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
 }
 
-/* Specific styles for active links */
-.link-active {
-    color: black;
-    background: orange;
+.my-navbar:hover {
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #c10944;
+    font-size: 16px;
+    background-color: #61dafb;
 }
 
-#header-menu{
-   padding-top: 20px; 
+.nav-navbar:active {
+    color: #c10944;
+    font-size: 16px;
+    background-color: #61dafb;
 }
