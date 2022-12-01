@@ -4,10 +4,15 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
+import { LoggedInContext } from "../App"
+import LogoutButton from './LogoutButton';
+import RegisterButton from './RegisterButton';
 
 
 function Header() {
-    
+
+    const [isLoggedIn, setIsLoggedIn] = React.useContext(LoggedInContext);
+
     return (
         <div >
             <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
@@ -27,12 +32,17 @@ function Header() {
                                 <NavDropdown.Item href="#">Log out </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
-                        <Nav>
-                            <Nav.Link href="#deets">Log out</Nav.Link>
-                        </Nav>
+                        {isLoggedIn  && <LogoutButton />}
+                        {!isLoggedIn && <RegisterButton/>}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+            <div className='container my-3'>
+                <h3>
+                     {isLoggedIn ? "Welcome!" : "Please login"}
+                </h3>        
+            </div>
+           
         </div>
     );
 }
